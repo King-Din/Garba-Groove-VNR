@@ -1,6 +1,6 @@
 # Garba Groove
 
-Simple frontend for Garba Groove project.
+Simple frontend for the Garba Groove project.
 
 ## Run locally
 
