@@ -1,5 +1,22 @@
 # Garba Groove
 
+Simple frontend for Garba Groove project.
+
+## Run locally
+
+Install dependencies and start the dev server:
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL shown by the dev server.
+
+## Notes
+- Mobile testing: use browser DevTools device toolbar or open on phone via LAN.
+# Garba Groove
+
 Mobile-first, single-scroll Garba/Dandiya event landing experience for Street Cause.
 
 ## Run locally
