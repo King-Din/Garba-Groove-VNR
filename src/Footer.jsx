@@ -19,7 +19,6 @@ function Footer() {
 
       {/* STREET CAUSE BRANDING */}
       <div className="footer-brand">
-
         <img
           src="/streetcause-logo.jpeg"
           alt="Street Cause VNRVJIET"
@@ -30,16 +29,13 @@ function Footer() {
           <span>STREET CAUSE</span>
           <strong>VNRVJIET</strong>
         </div>
-
       </div>
-
 
       {/* FOOTER CONTENT */}
       <div className="footer-links">
 
         {/* QUICK LINKS */}
         <div className="footer-column">
-
           <h3>QUICK LINKS</h3>
 
           <a href="#journey">
@@ -63,15 +59,13 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            Get Pass <ArrowUpRight size={17} />
+            Get Pass
+            <ArrowUpRight size={17} />
           </a>
-
         </div>
-
 
         {/* INSTAGRAM */}
         <div className="footer-column">
-
           <h3>CONNECT WITH US</h3>
 
           <a
@@ -80,7 +74,9 @@ function Footer() {
             rel="noreferrer"
             className="instagram-link"
           >
-            <span className="ig-box">IG</span>
+            <span className="ig-box">
+              IG
+            </span>
 
             <span>
               {INSTAGRAM_HANDLE}
@@ -91,45 +87,50 @@ function Footer() {
             Follow us for event updates,
             announcements and more.
           </p>
-
         </div>
-
 
         {/* CONTACT */}
         <div className="footer-column">
-
           <h3>CONTACT</h3>
 
-          <a href="tel:+917901427617">
-            <Phone size={19} />
-            <span>{PHONE_1}</span>
-          </a>
+          <div className="contact-person">
+            <div className="contact-person-info">
+              <strong>Nikitha Cherukuri</strong>
+              <span> (Human Resources &amp; Treasurer)</span>
+            </div>
 
-          <a href="tel:+919866543210">
-            <Phone size={19} />
-            <span>{PHONE_2}</span>
-          </a>
+            <a href="tel:+917901427617">
+              <Phone size={18} />
+              <span>{PHONE_1}</span>
+            </a>
+          </div>
 
+          <div className="contact-person">
+            <div className="contact-person-info">
+              <strong>Dhanasvi</strong>
+              <span> (Alumni Relations Head)</span>
+            </div>
+
+            <a href="tel:+919866543210">
+              <Phone size={18} />
+              <span>{PHONE_2}</span>
+            </a>
+          </div>
         </div>
 
       </div>
 
-
       {/* FINAL STATEMENT */}
       <div className="footer-closing">
-
         <p>SEE YOU ON THE</p>
 
         <h2>
           DANCE FLOOR<span>.</span>
         </h2>
-
       </div>
-
 
       {/* BOTTOM BAR */}
       <div className="footer-bottom">
-
         <span>
           © 2026 Street Cause VNRVJIET
         </span>
@@ -147,7 +148,6 @@ function Footer() {
         <span>
           Made to move.
         </span>
-
       </div>
 
     </footer>
