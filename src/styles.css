@@ -956,6 +956,35 @@ button {
 
 .footer-column:nth-child(3) a {
   font-size: 17px;
+  .contact-person {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contact-person-info strong {
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.contact-person-info span {
+  color: var(--muted);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: .03em;
+}
+
+.contact-person a {
+  font-size: 15px !important;
+}
 }
 
 
