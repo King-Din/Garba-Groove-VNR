@@ -1,6 +1,7 @@
 import {
   ArrowUpRight,
-  Phone
+  Phone,
+  Mail
 } from 'lucide-react';
 
 const PAYMENT_URL = 'https://rzp.io/rzp/QuJ5l2Gm';
@@ -12,6 +13,7 @@ const INSTAGRAM_HANDLE = '@streetcausevnrvjiet';
 
 const PHONE_1 = '+91 79014 27617';
 const PHONE_2 = '+91 9866543210';
+const EMAIL = 'streetcausevnr.hyd@gmail.com';
 
 function Footer() {
   return (
@@ -74,8 +76,38 @@ function Footer() {
             rel="noreferrer"
             className="instagram-link"
           >
-            <span className="ig-box">
-              IG
+            <span className="ig-icon">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                />
+              </svg>
             </span>
 
             <span>
@@ -116,6 +148,10 @@ function Footer() {
               <span>{PHONE_2}</span>
             </a>
           </div>
+          <a href={`mailto:${EMAIL}`} className="footer-email">
+            <Mail size={18} />
+            <span>{EMAIL}</span>
+          </a>
         </div>
 
       </div>
