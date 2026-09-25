@@ -19,6 +19,7 @@ function App(){
  const {scrollYProgress}=useScroll();
  const rotate=useTransform(scrollYProgress,[0,.35],[0,180]);
  const [count,setCount]=useState({d:'—',h:'—',m:'—',s:'—'});
+ const [menuOpen,setMenuOpen]=useState(false);
  useEffect(()=>{const target=new Date('2026-10-31T18:00:00+05:30'); const tick=()=>{let diff=target-Date.now(); if(diff<0)diff=0; setCount({d:String(Math.floor(diff/864e5)).padStart(2,'0'),h:String(Math.floor(diff%864e5/36e5)).padStart(2,'0'),m:String(Math.floor(diff%36e5/6e4)).padStart(2,'0'),s:String(Math.floor(diff%6e4/1e3)).padStart(2,'0')})};tick();const id=setInterval(tick,1000);return()=>clearInterval(id)},[]);
  const particles=useMemo(()=>Array.from({length:34},(_,i)=>({left:`${(i*37)%100}%`,top:`${(i*61)%100}%`,delay:(i%9)*.4,dur:5+(i%6)})),[]);
  return <div className="app">
@@ -26,7 +27,50 @@ function App(){
   <div className="ambient ambient-a"/><div className="ambient ambient-b"/>
   <div className="particles" aria-hidden="true">{particles.map((p,i)=><span key={i} style={{left:p.left,top:p.top,animationDelay:`${p.delay}s`,animationDuration:`${p.dur}s`}}/>)}</div>
   <motion.div className="mandala" style={{rotate}} aria-hidden="true"><div className="mandala-core"/><div className="petals"/></motion.div>
-  <header className="topbar"><a className="brand" href="#top"><span className="brand-mark">✦</span><span>GARBA<br/><b>GROOVE</b></span></a><a className="mini-ticket" href={PAYMENT_URL} target="_blank" rel="noreferrer">GET PASS <ArrowUpRight size={15}/></a></header>
+  <header className="topbar">
+  <div className="nav-left">
+    <a className="streetcause-logo-link" href="#top">
+      <img
+        src="/streetcause-logo.jpeg"
+        alt="Street Cause"
+        className="nav-streetcause-logo"
+      />
+    </a>
+
+    <a className="brand" href="#top">
+      <span className="brand-mark">✦</span>
+      <span>GARBA<br/><b>GROOVE</b></span>
+    </a>
+  </div>
+
+  <nav className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
+    <a href="#journey" onClick={() => setMenuOpen(false)}>THE NIGHT</a>
+    <a href="#energy" onClick={() => setMenuOpen(false)}>ENERGY</a>
+    <a href="#gallery" onClick={() => setMenuOpen(false)}>GALLERY</a>
+    <a href="#impact" onClick={() => setMenuOpen(false)}>IMPACT</a>
+    <a href="#top" onClick={() => setMenuOpen(false)}>CONTACTS</a>
+  </nav>
+
+  <div className="nav-actions">
+    <a
+      className="mini-ticket"
+      href={PAYMENT_URL}
+      target="_blank"
+      rel="noreferrer"
+    >
+      GET PASS <ArrowUpRight size={15}/>
+    </a>
+
+    <button
+      className="menu-toggle"
+      type="button"
+      aria-label={menuOpen ? "Close menu" : "Open menu"}
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      {menuOpen ? '×' : '☰'}
+    </button>
+  </div>
+</header>
   <main id="top">
    <section className="hero section"><div className="hero-copy"><motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.8}} className="eyebrow"><Sparkles size={14}/> STREET CAUSE PRESENTS</motion.p><motion.h1 initial={{opacity:0,scale:.9}} animate={{opacity:1,scale:1}} transition={{duration:1,delay:.15}}><span>GARBA</span><em>GROOVE</em></motion.h1><motion.p className="hero-sub" initial={{opacity:0,y:15}} animate={{opacity:1,y:0}} transition={{duration:.8,delay:.35}}>Dance loud. Celebrate together. <strong>Give back.</strong></motion.p><motion.a className="hero-cta" href="#journey" initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.8,delay:.5}}>ENTER THE GROOVE <ArrowDown size={17}/></motion.a></div><div className="hero-sticks" aria-hidden="true"><span/><span/><span/></div><div className="scroll-hint"><span>SCROLL TO ENTER</span><ArrowDown size={15}/></div></section>
    <section id="journey" className="section reveal-section"><div className="section-kicker">01 / THE NIGHT</div><h2>A celebration<br/><span>with a purpose.</span></h2><p className="lead">Garba Groove brings the energy of Garba and Dandiya into one unforgettable night — while keeping the spirit of community at the heart of the celebration.</p><div className="event-grid"><Info icon={<CalendarDays/>} label="DATE" value={EVENT.date}/><Info icon={<Clock/>} label="TIME" value={EVENT.time}/><Info icon={<MapPin/>} label="VENUE" value={EVENT.venue}/></div><div className="action-row"><a href={MAP_URL} target="_blank" rel="noreferrer" className="outline-btn"><MapPin size={17}/> GET DIRECTIONS <ArrowUpRight size={15}/></a><a href={PAYMENT_URL} target="_blank" rel="noreferrer" className="solid-btn"><Ticket size={17}/> GET YOUR PASS</a></div></section>
