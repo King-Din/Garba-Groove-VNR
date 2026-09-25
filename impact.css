@@ -1,0 +1,15 @@
+.impact-pair{position:relative;height:180vh}
+.impact-stage{position:sticky;top:10vh;height:80vh;max-width:640px;margin:0 auto;border-radius:22px;
+  overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.impact-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.impact-stage .before{z-index:1}
+.impact-stage .after{z-index:2;opacity:0}
+.impact-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:1.4rem 1.6rem;
+  background:linear-gradient(to top, rgba(0,0,0,.75), transparent);color:#fff;font-size:1.05rem}
+.impact-cap b{display:block;font-size:1.3rem;margin-bottom:.2rem}
+
+@media (prefers-reduced-motion:reduce){
+  .impact-pair{height:auto}
+  .impact-stage{position:static;height:60vh}
+  .impact-stage .after{opacity:1}
+}

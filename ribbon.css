@@ -1,0 +1,19 @@
+/* Two crossing ribbons, each scrolling text sideways forever */
+.ribbons{position:relative;padding:2.2rem 0;overflow:hidden}
+.ribbon{white-space:nowrap;overflow:hidden;transform:rotate(-2deg);margin:0.6rem 0}
+.ribbon:nth-child(2){transform:rotate(2deg)}
+.ribbon-track{display:inline-block;padding:0.6rem 0;animation:ribbon-scroll 18s linear infinite}
+.ribbon:nth-child(2) .ribbon-track{animation-direction:reverse;animation-duration:22s}
+.ribbon span{display:inline-block;font-size:clamp(1.2rem,4vw,2.4rem);font-weight:700;letter-spacing:.04em;
+  padding:0 1.4rem;text-transform:uppercase}
+.ribbon:nth-child(1){background:#e0245e;color:#fff}
+.ribbon:nth-child(2){background:#f7b32b;color:#1a0b2e}
+.ribbon span::after{content:"✦";margin-left:1.4rem;opacity:.6}
+
+@keyframes ribbon-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .ribbon-track{animation:none}
+}
