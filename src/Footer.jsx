@@ -17,7 +17,7 @@ const EMAIL = 'streetcausevnr.hyd@gmail.com';
 
 function Footer() {
   return (
-    <footer className="footer section">
+    <footer id="contacts" className="footer section">
 
       {/* STREET CAUSE BRANDING */}
       <div className="footer-brand">
